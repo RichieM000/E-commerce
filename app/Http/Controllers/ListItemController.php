@@ -8,7 +8,13 @@ class ListItemController extends Controller
 {
     public function index(){
         return view('index', [
-            'listitems' => ListItem::latest()->get()
+            'listitems' => ListItem::latest()->paginate(4)
+        ]);
+    }
+
+    public function show(ListItem $listitem){
+        return view ('show', [
+            'listitems' => $listitem
         ]);
     }
 }

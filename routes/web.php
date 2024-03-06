@@ -14,3 +14,5 @@ use App\Http\Controllers\ListItemController;
 */
 
 Route::get('/', [ListItemController::class, 'index']);
+
+Route::get('/{listitem}', [ListItemController::class, 'show']);
